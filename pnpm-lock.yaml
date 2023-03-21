@@ -5,7 +5,7 @@ importers:
   .:
     specifiers:
       '@antfu/eslint-config': ^0.34.0
-      '@simon_he/base-webcomponent': ^0.0.4
+      '@simon_he/base-webcomponent': ^0.0.5
       '@types/node': ^18.0.0
       '@vitejs/plugin-vue': ^3.1.2
       '@vueuse/core': ^9.0.0
@@ -27,7 +27,7 @@ importers:
       vue: 3.2.41
     devDependencies:
       '@antfu/eslint-config': 0.34.0_wyqvi574yv7oiwfeinomdzmc3m
-      '@simon_he/base-webcomponent': 0.0.4
+      '@simon_he/base-webcomponent': 0.0.5
       '@types/node': 18.11.16
       '@vitejs/plugin-vue': 3.2.0_vite@4.0.1+vue@3.2.41
       bumpp: 8.2.1
@@ -742,8 +742,8 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /@simon_he/base-webcomponent/0.0.4:
-    resolution: {integrity: sha512-MlAzsec7Ll9MnB7y/yPbKUOLx8VNmXfZLtPuXMa9nZirfYgHwvBef0eMPqgEeV0WaYI5l2eUd7mVL7FaMoZ/WQ==}
+  /@simon_he/base-webcomponent/0.0.5:
+    resolution: {integrity: sha512-e5zsQpNR+XuDDNi5CYuKoRvZvCiOjx6ApitZB6b//gGtmIpppMneTNaGEavtp7T3XLk6WD/g3+/+UVCwgveZcw==}
     engines: {node: '>=14.6'}
     requiresBuild: true
     dependencies:
