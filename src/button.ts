@@ -96,18 +96,52 @@ export class AdwButton extends BaseWebComponent {
           background-color: rgba(0,0,0,.04);
           box-shadow: none;
         }
+
+        .${this.prefix}[ghost]{
+          box-shadow:none;
+          background-color: transparent;
+        }
+        .${this.prefix}-primary[ghost]{
+          color: rgb(22, 119, 255);
+          border-color: rgb(22, 119, 255);
+        }
+        .${this.prefix}-primary[ghost]:hover{
+          color: rgb(64, 150, 255);
+          border-color: rgb(64, 150, 255);
+        }
+        .${this.prefix}[shape="round"]{
+          border-radius: 8px;
+        }
+        .${this.prefix}[shape="circle"]{
+          border-radius: 50%;
+        }
+
+        .${this.prefix}[size="large"]{
+          padding: 6.42857px 15px;
+          height:40px;
+          font-size:16px;
+        }
+        .${this.prefix}[size="small"]{
+          padding: 0px 7px;
+          height: 24px;
+        }
+
+        .${this.prefix}[block]{
+          width:100%;
+        }
         `
   }
 
   template(): string {
-    const { type = 'default',disabled } = this.props
-    console.log(this.props);
-    const attributes = Object.keys(this.props).map(key=>{
-      const value = this.props[key]
-      if(value ==='')
-        return key
-      return `${key}="${value}"`
-    }).join(' ')
+    const { type = 'default' } = this.props
+    const attributes = Object.keys(this.props)
+      .map((key) => {
+        const value = this.props[key]
+        if (value === '')
+          return key
+        return `${key}="${value}"`
+      })
+      .join(' ')
 
     const btnClass = `${this.prefix} ${this.prefix}-${type}`
     return `<button class="${btnClass}" ${attributes}><slot></slot></button>`
