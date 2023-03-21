@@ -1,0 +1,38 @@
+{
+  "hash": "ae787eb8",
+  "browserHash": "2f967cf5",
+  "optimized": {
+    "vue": {
+      "src": "../../../../node_modules/.pnpm/vue@3.2.41/node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "file": "vue.js",
+      "fileHash": "70950ec2",
+      "needsInterop": false
+    },
+    "@vue/devtools-api": {
+      "src": "../../../../node_modules/.pnpm/@vue+devtools-api@6.5.0/node_modules/@vue/devtools-api/lib/esm/index.js",
+      "file": "@vue_devtools-api.js",
+      "fileHash": "7ff019ab",
+      "needsInterop": false
+    },
+    "unocss": {
+      "src": "../../../../node_modules/.pnpm/unocss@0.29.6/node_modules/unocss/dist/index.mjs",
+      "file": "unocss.js",
+      "fileHash": "7be2b907",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "fs-OP2BBMN6": {
+      "file": "fs-OP2BBMN6.js"
+    },
+    "chunk-Z53EMXZP": {
+      "file": "chunk-Z53EMXZP.js"
+    },
+    "axios-RVEYF6SX": {
+      "file": "axios-RVEYF6SX.js"
+    },
+    "chunk-WQG2LZMB": {
+      "file": "chunk-WQG2LZMB.js"
+    }
+  }
+}
