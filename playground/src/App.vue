@@ -20,6 +20,9 @@ registerLink()
       <adw-link href="/divider" target="_self">
         divider
       </adw-link>
+      <adw-link href="/title" target="_self">
+        title
+      </adw-link>
     </div>
     <router-view v-slot="{ Component }">
       <keep-alive>
