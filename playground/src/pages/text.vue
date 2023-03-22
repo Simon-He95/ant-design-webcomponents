@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { registerText } from '../../../src/text'
+import { registerLink } from '../../../src/link'
 
 registerText()
+registerLink()
 </script>
 
 <template>
@@ -43,5 +45,6 @@ registerText()
     <adw-text italic>
       Ant Design (italic)
     </adw-text>
+    <adw-link> Ant Design (Link) </adw-link>
   </div>
 </template>
