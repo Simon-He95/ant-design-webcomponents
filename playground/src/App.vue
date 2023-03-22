@@ -17,8 +17,15 @@ registerLink()
       <adw-link href="/text" target="_self">
         text
       </adw-link>
+      <adw-link href="/divider" target="_self">
+        divider
+      </adw-link>
     </div>
-    <router-view />
+    <router-view v-slot="{ Component }">
+      <keep-alive>
+        <component :is="Component" />
+      </keep-alive>
+    </router-view>
     <Footer />
   </main>
 </template>
