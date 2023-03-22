@@ -5,7 +5,7 @@ export class AdwButton extends BaseWebComponent {
   name = 'adw-button'
   css(): string {
     return `
-        button {
+        .${this.name} {
           outline: none;
           position: relative;
           display: inline-block;
