@@ -1,5 +1,11 @@
 <script setup lang="ts">
-import { spinner } from '../../public/icons'
+import {
+  homeOutlined,
+  loadingOutlined,
+  settingFilled,
+  smileOutlined,
+  syncOutlined,
+} from '../../public/icons'
 import { registerIcon } from '../../../src/icon'
 
 registerIcon()
@@ -7,6 +13,11 @@ registerIcon()
 
 <template>
   <div flex="~ gap-2" py4>
-    <adw-icon :component="spinner" spin />
+    <adw-icon :component="homeOutlined" />
+    <adw-icon :component="settingFilled" />
+    <adw-icon :component="smileOutlined" style="color: green" />
+    <adw-icon :component="syncOutlined" spin />
+    <adw-icon :component="smileOutlined" rotate="180" />
+    <adw-icon :component="loadingOutlined" spin />
   </div>
 </template>

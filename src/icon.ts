@@ -6,7 +6,12 @@ export class AdwIcon extends BaseWebComponent {
   css(): string {
     return `
       .${this.name} {
-        display:inline-block
+        display:inline-flex;
+        line-height:0;
+        color:inherit;
+        text-align:center;
+        text-transform: none;
+        vertical-align: -0.125em;
        }
        .${this.name}[spin]{
         animation: loadingSpinner 1s infinite linear;
