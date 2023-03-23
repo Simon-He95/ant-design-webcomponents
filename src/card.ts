@@ -9,7 +9,7 @@ export class AdwCard extends BaseWebComponent {
         text-align:left;
         width:inherit;
         border: 1px solid #f0f0f0;
-        ox-sizing: border-box;
+        box-sizing: border-box;
         margin: 0;
         padding: 0;
         color: rgba(0,0,0,.88);
@@ -68,7 +68,6 @@ export class AdwCard extends BaseWebComponent {
     const attributes = getAttributes(this.props)
     const cardClass = `${this.name} ${className}`
     this.registerEvent('click-handler', `${this.name}-head-extra`)
-    // this.registerEvent('click-handler', `${this.name}-head-extra`, 'mouseenter')
     return `<div class="${cardClass}" ${attributes}>
       <div class="${this.name}-head">
         <div class="${this.name}-head-wrapper">
@@ -81,25 +80,6 @@ export class AdwCard extends BaseWebComponent {
       </div>
     </div>`
   }
-
-  registerEvent(emitName: string, selector: string, eventName = 'click') {
-    const event = new CustomEvent(emitName)
-
-    this.addEventListener(
-      eventName,
-      (e) => {
-        e.preventDefault()
-        // todo: 解决鼠标事件触发元素不正确的问题
-        const target = e.composedPath()[0] as Element
-
-        if (target?.className === selector)
-          this.dispatchEvent(event)
-      },
-      false,
-    )
-  }
-
-  deactivate() {}
 }
 
 export function registerCard(name = 'adw-card') {

@@ -1,11 +1,15 @@
 <script setup lang="ts">
 import { registerButton } from '../../../src/button'
 registerButton()
+
+const handler = () => {
+  console.log('hi')
+}
 </script>
 
 <template>
   <div flex="~ gap-2" py4>
-    <adw-button type="default">
+    <adw-button type="default" @click-handler="handler">
       default
     </adw-button>
     <adw-button type="default" danger>

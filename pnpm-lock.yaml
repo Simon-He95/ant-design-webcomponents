@@ -6,7 +6,7 @@ importers:
     specifiers:
       '@ant-design/icons': ^5.0.1
       '@antfu/eslint-config': ^0.34.0
-      '@simon_he/base-webcomponent': ^0.0.5
+      '@simon_he/base-webcomponent': ^0.0.8
       '@types/node': ^18.0.0
       '@vitejs/plugin-vue': ^3.1.2
       '@vueuse/core': ^9.0.0
@@ -36,7 +36,7 @@ importers:
     devDependencies:
       '@ant-design/icons': 5.0.1
       '@antfu/eslint-config': 0.34.0_wyqvi574yv7oiwfeinomdzmc3m
-      '@simon_he/base-webcomponent': 0.0.5
+      '@simon_he/base-webcomponent': 0.0.8
       '@types/node': 18.11.16
       '@vitejs/plugin-vue': 3.2.0_vite@4.2.1+vue@3.2.41
       '@webcomponents/webcomponentsjs': 2.7.0
@@ -1140,13 +1140,13 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /@simon_he/base-webcomponent/0.0.5:
-    resolution: {integrity: sha512-e5zsQpNR+XuDDNi5CYuKoRvZvCiOjx6ApitZB6b//gGtmIpppMneTNaGEavtp7T3XLk6WD/g3+/+UVCwgveZcw==}
+  /@simon_he/base-webcomponent/0.0.8:
+    resolution: {integrity: sha512-IvH1TQAzlL0k8QBdzx/eqd30rqqiH9nSQIdsF+z4h4IXdHVJ38YOUom0dekLPPbBvrFE0iz/S73jpFBC3UxoGQ==}
     engines: {node: '>=14.6'}
     requiresBuild: true
     dependencies:
-      '@vueuse/core': 9.7.0_vue@3.2.41
-      vue: 3.2.41
+      '@vueuse/core': 9.13.0_vue@3.2.47
+      vue: 3.2.47
     transitivePeerDependencies:
       - '@vue/composition-api'
     dev: true
@@ -1983,6 +1983,7 @@ packages:
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
+    dev: false
 
   /@vueuse/metadata/9.13.0:
     resolution: {integrity: sha512-gdU7TKNAUVlXXLbaF+ZCfte8BjRJQWPCa2J55+7/h+yDtzw3vOoGQDRXzI6pyKyo6bXFT5/QoPE4hAknExjRLQ==}
@@ -2015,6 +2016,7 @@ packages:
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
+    dev: false
 
   /@webcomponents/webcomponentsjs/2.7.0:
     resolution: {integrity: sha512-j161Z9oiy8k74vchdrQGihfSp7QulrTclCUiPo0D7JF6/RjpXAmB0ThlTAFlSElkgqg0vdFgNAXaX9ZHZy25wQ==}
@@ -6438,6 +6440,7 @@ packages:
         optional: true
     dependencies:
       vue: 3.2.41
+    dev: false
 
   /vue-demi/0.13.11_vue@3.2.47:
     resolution: {integrity: sha512-IR8HoEEGM65YY3ZJYAjMlKygDQn25D5ajNFNoKh9RSDMQtlzCxtfQjdQgv9jjK+m3377SsJXY8ysq8kLCZL25A==}

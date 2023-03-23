@@ -2,7 +2,7 @@
 import { registerCard } from '../../../src/card'
 registerCard()
 const handler = (e) => {
-  // console.log('hi',e);
+  console.log('hi', e)
 }
 </script>
 
