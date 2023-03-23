@@ -29,6 +29,9 @@ registerLink()
       <adw-link href="/layout" target="_self">
         layout
       </adw-link>
+      <adw-link href="/card" target="_self">
+        card
+      </adw-link>
     </div>
     <router-view v-slot="{ Component }">
       <keep-alive>

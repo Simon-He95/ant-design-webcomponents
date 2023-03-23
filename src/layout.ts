@@ -3,10 +3,6 @@ import { getAttributes } from '../utils'
 
 export class AdwLayout extends BaseWebComponent {
   name = 'adw-layout'
-  connectedCallback() {
-    // console.log(hasSider);
-  }
-
   css(): string {
     const hasSider = [...(this.childNodes as any)].some(
       item => item.name === 'adw-sider',
