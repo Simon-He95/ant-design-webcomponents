@@ -23,6 +23,9 @@ registerLink()
       <adw-link href="/title" target="_self">
         title
       </adw-link>
+      <adw-link href="/row" target="_self">
+        row
+      </adw-link>
     </div>
     <router-view v-slot="{ Component }">
       <keep-alive>
