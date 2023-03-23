@@ -13,6 +13,9 @@ export class AdwLayout extends BaseWebComponent {
     )
 
     return `
+      :host{
+        width:100%;
+      }
       .${this.name}{
         all: inherit;
         display: flex;
