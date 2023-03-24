@@ -3,7 +3,14 @@ import { getAttributes } from '../utils'
 
 export class AdwCard extends BaseWebComponent {
   name = 'adw-card'
+  _sizeMap: any = {
+    small: 12,
+    default: 24,
+  }
+
   css(): string {
+    const { size = 'default' } = this.props
+
     return `
       .${this.name}{
         margin:inherit;
@@ -74,7 +81,7 @@ export class AdwCard extends BaseWebComponent {
       }
 
       .${this.name}-body{
-        padding: 12px;
+        padding: ${this._sizeMap[size] ?? size}px;
         border-radius: 0 0 8px 8px;
       }
       `
@@ -84,20 +91,23 @@ export class AdwCard extends BaseWebComponent {
     const { className = '', title = '', extra = '', cover } = this.props
 
     const attributes = getAttributes(this.props, ['cover'])
-    console.log(this.props, attributes)
 
     const cardClass = `${this.name} ${className} ${
       cover ? `${this.name}-hover` : ''
     }`
-    this.registerEvent('click-handler', `${this.name}-head-extra`)
-    const head = cover
-      ? `<div class="${this.name}-cover">${cover}</div>`
-      : ` <div class="${this.name}-head">
+    let head
+    if (cover) {
+      head = `<div class="${this.name}-cover">${cover}</div>`
+    }
+    else {
+      this.registerEvent('click-handler', `${this.name}-head-extra`)
+      head = `<div class="${this.name}-head">
       <div class="${this.name}-head-wrapper">
         <div class="${this.name}-head-title">${title}</div>
         <div class="${this.name}-head-extra" >${extra}</div>
       </div>
     </div>`
+    }
     return `<div class="${cardClass}" ${attributes}>
      ${head}
       <div class="${this.name}-body">
