@@ -9,7 +9,7 @@ export const getAttributes = (
       const value = props[key]
       if (value === '')
         return key
-      return `${key}="${value}"`
+      return `${key}="${value.replace(/"/g, '\'')}"`
     })
     .filter(Boolean)
     .join(' ')

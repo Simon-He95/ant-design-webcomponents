@@ -6,12 +6,12 @@ export class AdwCard extends BaseWebComponent {
   css(): string {
     return `
       .${this.name}{
+        margin:inherit;
+        padding:inherit;
         text-align:left;
         width:inherit;
         border: 1px solid #f0f0f0;
         box-sizing: border-box;
-        margin: 0;
-        padding: 0;
         color: rgba(0,0,0,.88);
         font-size: 14px;
         line-height: 1.5714285714285714;
@@ -20,6 +20,23 @@ export class AdwCard extends BaseWebComponent {
         position: relative;
         background: #fff;
         border-radius: 8px;
+      }
+      .${this.name}-cover{
+        margin-top: -1px;
+        margin-inline-start: -1px;
+        margin-inline-end: -1px;
+      }
+      .${this.name}-hover:hover{
+        border-color: transparent;
+        box-shadow: 0 1px 2px -2px rgba(0,0,0,.16), 0 3px 6px 0 rgba(0,0,0,.12), 0 5px 12px 4px rgba(0,0,0,.09);
+      }
+      .${this.name}-cover img{
+        border-radius: 8px 8px 0 0;
+      }
+      .${this.name}-cover > *{
+        display: block;
+        width: 100%;
+        cursor:pointer;
       }
       .${this.name}-head{
         min-height: 38px;
@@ -64,17 +81,25 @@ export class AdwCard extends BaseWebComponent {
   }
 
   template(): string {
-    const { className = '', title = '', extra = '' } = this.props
-    const attributes = getAttributes(this.props)
-    const cardClass = `${this.name} ${className}`
+    const { className = '', title = '', extra = '', cover } = this.props
+
+    const attributes = getAttributes(this.props, ['cover'])
+    console.log(this.props, attributes)
+
+    const cardClass = `${this.name} ${className} ${
+      cover ? `${this.name}-hover` : ''
+    }`
     this.registerEvent('click-handler', `${this.name}-head-extra`)
-    return `<div class="${cardClass}" ${attributes}>
-      <div class="${this.name}-head">
-        <div class="${this.name}-head-wrapper">
-          <div class="${this.name}-head-title">${title}</div>
-          <div class="${this.name}-head-extra" >${extra}</div>
-        </div>
+    const head = cover
+      ? `<div class="${this.name}-cover">${cover}</div>`
+      : ` <div class="${this.name}-head">
+      <div class="${this.name}-head-wrapper">
+        <div class="${this.name}-head-title">${title}</div>
+        <div class="${this.name}-head-extra" >${extra}</div>
       </div>
+    </div>`
+    return `<div class="${cardClass}" ${attributes}>
+     ${head}
       <div class="${this.name}-body">
         <slot></slot>
       </div>
