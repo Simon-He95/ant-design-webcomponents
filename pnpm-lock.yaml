@@ -6,7 +6,7 @@ importers:
     specifiers:
       '@ant-design/icons': ^5.0.1
       '@antfu/eslint-config': ^0.34.0
-      '@simon_he/base-webcomponent': ^0.0.8
+      '@simon_he/base-webcomponent': ^0.0.10
       '@types/node': ^18.0.0
       '@vitejs/plugin-vue': ^3.1.2
       '@vueuse/core': ^9.0.0
@@ -36,7 +36,7 @@ importers:
     devDependencies:
       '@ant-design/icons': 5.0.1
       '@antfu/eslint-config': 0.34.0_wyqvi574yv7oiwfeinomdzmc3m
-      '@simon_he/base-webcomponent': 0.0.8
+      '@simon_he/base-webcomponent': 0.0.10
       '@types/node': 18.11.16
       '@vitejs/plugin-vue': 3.2.0_vite@4.2.1+vue@3.2.41
       '@webcomponents/webcomponentsjs': 2.7.0
@@ -1140,8 +1140,8 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /@simon_he/base-webcomponent/0.0.8:
-    resolution: {integrity: sha512-IvH1TQAzlL0k8QBdzx/eqd30rqqiH9nSQIdsF+z4h4IXdHVJ38YOUom0dekLPPbBvrFE0iz/S73jpFBC3UxoGQ==}
+  /@simon_he/base-webcomponent/0.0.10:
+    resolution: {integrity: sha512-PWTbME2Zj78xYNQjUZ+bs3o8kNvzPuKKAGOPZJrjgmbbFfh02avDND21PDTMTLx5m6n9Br41oIAeDlniHsiPfg==}
     engines: {node: '>=14.6'}
     requiresBuild: true
     dependencies:
