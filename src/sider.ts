@@ -19,7 +19,7 @@ export class AdwSider extends BaseWebComponent {
   template(): string {
     const { className = '' } = this.props
     const attributes = getAttributes(this.props)
-    const siderClass = `${this.name} ${className}`
+    const siderClass = this.lintClass(`${this.name} ${className}`)
     return `<aside class="${siderClass}" ${attributes}><slot></slot></aside>`
   }
 }

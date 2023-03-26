@@ -15,7 +15,7 @@ export class AdwFooter extends BaseWebComponent {
   template(): string {
     const { className = '' } = this.props
     const attributes = getAttributes(this.props)
-    const footerClass = `${this.name} ${className}`
+    const footerClass = this.lintClass(`${this.name} ${className}`)
     return `<footer class="${footerClass}" ${attributes}><slot></slot></footer>`
   }
 }

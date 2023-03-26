@@ -17,7 +17,7 @@ export class AdwTitle extends BaseWebComponent {
   template(): string {
     const { level = 1, className = '' } = this.props
     const attributes = getAttributes(this.props)
-    const titleClass = `${this.name} ${className}`
+    const titleClass = this.lintClass(`${this.name} ${className}`)
     return `<h${level} class="${titleClass}" ${attributes}><slot></slot></h${level}>`
   }
 }

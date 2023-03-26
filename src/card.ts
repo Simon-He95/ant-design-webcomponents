@@ -92,9 +92,9 @@ export class AdwCard extends BaseWebComponent {
 
     const attributes = getAttributes(this.props, ['cover'])
 
-    const cardClass = `${this.name} ${className} ${
-      cover ? `${this.name}-hover` : ''
-    }`
+    const cardClass = this.lintClass(
+      `${this.name} ${className} ${cover ? `${this.name}-hover` : ''}`,
+    )
     let head
     if (cover) {
       head = `<div class="${this.name}-cover">${cover}</div>`

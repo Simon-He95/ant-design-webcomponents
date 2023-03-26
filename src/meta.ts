@@ -37,7 +37,7 @@ export class AdwMeta extends BaseWebComponent {
   template(): string {
     const { className = '', title = '', description = '' } = this.props
     const attributes = getAttributes(this.props, ['cover'])
-    const metaClass = `${this.name} ${className}`
+    const metaClass = this.lintClass(`${this.name} ${className}`)
 
     return `<div class="${metaClass}" ${attributes}>
       <div class="${this.name}-detail">

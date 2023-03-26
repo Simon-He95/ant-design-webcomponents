@@ -18,7 +18,7 @@ export class AdwContent extends BaseWebComponent {
   template(): string {
     const { className = '' } = this.props
     const attributes = getAttributes(this.props)
-    const contentClass = `${this.name} ${className}`
+    const contentClass = this.lintClass(`${this.name} ${className}`)
     return `<main class="${contentClass}" ${attributes}><slot></slot></main>`
   }
 }

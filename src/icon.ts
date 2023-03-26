@@ -26,8 +26,8 @@ export class AdwIcon extends BaseWebComponent {
   }
 
   template(): string {
-    const { component } = this.props
-    const iconClass = `${this.name}`
+    const { component, className } = this.props
+    const iconClass = this.lintClass(`${this.name} ${className}`)
     const attributes = getAttributes(this.props, ['component'])
 
     return `<span class="${iconClass}" ${attributes}>${component}</span>`

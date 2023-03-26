@@ -34,7 +34,7 @@ export class AdwCol extends BaseWebComponent {
   template(): string {
     const { className = '' } = this.props
     const attributes = getAttributes(this.props)
-    const colClass = `${this.name} ${className}`
+    const colClass = this.lintClass(`${this.name} ${className}`)
     return `<div class="${colClass}" ${attributes}><slot></slot></div>`
   }
 }

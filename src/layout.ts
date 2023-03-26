@@ -30,7 +30,7 @@ export class AdwLayout extends BaseWebComponent {
   template(): string {
     const { className = '' } = this.props
     const attributes = getAttributes(this.props)
-    const layoutClass = `${this.name} ${className}`
+    const layoutClass = this.lintClass(`${this.name} ${className}`)
     return `<section class="${layoutClass}" ${attributes}><slot></slot></section>`
   }
 }

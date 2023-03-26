@@ -19,7 +19,7 @@ export class AdwHeader extends BaseWebComponent {
   template(): string {
     const { className = '' } = this.props
     const attributes = getAttributes(this.props)
-    const headerClass = `${this.name} ${className}`
+    const headerClass = this.lintClass(`${this.name} ${className}`)
     return `<header class="${headerClass}" ${attributes}><slot></slot></header>`
   }
 }

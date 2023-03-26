@@ -77,7 +77,9 @@ export class AdwDivider extends BaseWebComponent {
   template(): string {
     const { orientation = 'center', className = '' } = this.props
     const attributes = getAttributes(this.props)
-    const dividerClass = `${this.name} ${this.name}-${orientation} ${className}`
+    const dividerClass = this.lintClass(
+      `${this.name} ${this.name}-${orientation} ${className}`,
+    )
     if (this.props.plain !== undefined)
       return `<div class="${dividerClass}" ${attributes}><span><slot></slot></span></div>`
     return `<div class="${dividerClass}" ${attributes}><slot></slot></div>`

@@ -27,7 +27,7 @@ export class AdwRow extends BaseWebComponent {
   template(): string {
     const { className = '' } = this.props
     const attributes = getAttributes(this.props)
-    const rowClass = `${this.name} ${className}`
+    const rowClass = this.lintClass(`${this.name} ${className}`)
     return `<div class="${rowClass}" ${attributes}><slot></slot></div>`
   }
 }

@@ -19,7 +19,7 @@ export class AdwLink extends BaseWebComponent {
   }
 
   template(): string {
-    const linkClass = `${this.name}`
+    const linkClass = this.lintClass(`${this.name} ${this.props.className}`)
     const attributes = getAttributes(
       Object.assign(
         {

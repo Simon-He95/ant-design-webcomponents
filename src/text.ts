@@ -84,7 +84,9 @@ export class AdwText extends BaseWebComponent {
   template(): string {
     const { type = 'default', className = '' } = this.props
     const attributes = getAttributes(this.props)
-    const btnClass = `${this.name} ${this.name}-${type} ${className}`
+    const btnClass = this.lintClass(
+      `${this.name} ${this.name}-${type} ${className}`,
+    )
 
     for (const key in this.props) {
       const mapValue = this.map[key]

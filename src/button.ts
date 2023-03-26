@@ -136,7 +136,9 @@ export class AdwButton extends BaseWebComponent {
   template(): string {
     const { type = 'default', className = '' } = this.props
     const attributes = getAttributes(this.props)
-    const btnClass = `${this.name} ${this.name}-${type} ${className}`
+    const btnClass = this.lintClass(
+      `${this.name} ${this.name}-${type} ${className}`,
+    )
     this.registerEvent('click-handler', btnClass)
 
     return `<button class="${btnClass}" ${attributes}><slot></slot></button>`
