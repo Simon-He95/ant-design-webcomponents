@@ -1,6 +1,11 @@
 import { BaseWebComponent } from '@simon_he/base-webcomponent'
 import { getAttributes } from '../utils'
 
+export function toArray<T>(array: T) {
+  if (Array.isArray(array))
+    return array
+  return [array]
+}
 export class AdwSwitch extends BaseWebComponent {
   name = 'adw-switch'
   _sizeMap: any = {
@@ -99,6 +104,7 @@ export class AdwSwitch extends BaseWebComponent {
 
     return `<button type="button" role="switch" aria-checked="${checked}" class="${switchClass}" ${attributes}>
       <div class="${this.name}-handle"></div>
+      ${checked ? 'nihao' : ''}
       <span class="${this.name}-inner">
         <span class="${this.name}-inner-checked"></span>
         <span class="${this.name}-inner-unchecked"></span>
