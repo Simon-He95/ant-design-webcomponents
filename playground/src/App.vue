@@ -35,6 +35,9 @@ registerLink()
       <adw-link href="/switch" target="_self">
         switch
       </adw-link>
+      <adw-link href="/checkbox" target="_self">
+        checkbox
+      </adw-link>
     </div>
     <router-view v-slot="{ Component }">
       <keep-alive>
