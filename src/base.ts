@@ -95,7 +95,7 @@ export class BaseWebComponent extends HTMLElement {
   }
 
   patchChildren(oldChildren: Element[], newChildren: Element[]) {
-    // 目前只考虑数量相同的情况
+    // 目前只考虑直接更新的情况
     for (let i = 0; i < oldChildren.length; i++) {
       const oldChild = oldChildren[i]
       const newChild = newChildren[i]
@@ -120,6 +120,18 @@ export class BaseWebComponent extends HTMLElement {
       else {
         oldChild.parentElement!.replaceChildren(newChild)
       }
+    }
+    // 老节点多余新节点
+    for (let i = oldChildren.length; i < newChildren.length; i++) {
+      const oldChild = oldChildren[i]
+      oldChild.parentElement!.removeChild(oldChild)
+    }
+
+    // 新节点多余老节点
+    if (oldChildren.length < newChildren.length) {
+      oldChildren[0].parentElement!.append(
+        ...newChildren.slice(oldChildren.length),
+      )
     }
   }
 
@@ -182,13 +194,15 @@ export class BaseWebComponent extends HTMLElement {
       e.stopImmediatePropagation()
       // mouseenter存在一定问题获取不到真正的元素
       const targets = e.composedPath() as Element[]
-      if (
-        targets.some((target) => {
-          const className = target.className
-          return className && className.split(' ').includes(selector)
-        })
-      )
-        this.dispatchEvent(event)
+      const actualTarget = targets.find((target) => {
+        const className = target.className
+        return (
+          typeof className === 'string'
+          && className.split(' ').includes(selector)
+        )
+      })
+      if (actualTarget)
+        this.dispatchEvent(Object.assign(event, { actualTarget }))
       return false
     }
     this.addEventListener(eventName, effect, false)

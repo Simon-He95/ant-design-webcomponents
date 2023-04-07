@@ -1,11 +1,6 @@
 import { BaseWebComponent } from '@simon_he/base-webcomponent'
 import { getAttributes } from '../utils'
 
-export function toArray<T>(array: T) {
-  if (Array.isArray(array))
-    return array
-  return [array]
-}
 export class AdwSwitch extends BaseWebComponent {
   name = 'adw-switch'
   _sizeMap: any = {
@@ -80,17 +75,21 @@ export class AdwSwitch extends BaseWebComponent {
       .${this.name}-inner-unchecked{
         transition: margin-inline-start .2s ease-in-out,margin-inline-end .2s ease-in-out;
       }
+      .${this.name}[disabled]{
+        cursor: not-allowed;
+        opacity: .65;
+      }
       .${this.name}-checked:hover:not([disabled]){
         background: #4096ff;
       }
-      .${this.name}:hover:not(disabled){
+      .${this.name}-unchecked:hover:not([disabled]){
         background: rgba(0,0,0,.45);
       }
       `
   }
 
   template(): string {
-    const { className = '', checked = 'false' } = this.props
+    const { className = '', checked = 'false', disabled = false } = this.props
 
     const attributes = getAttributes(this.props)
 
@@ -99,12 +98,11 @@ export class AdwSwitch extends BaseWebComponent {
         checked === 'true' ? `${this.name}-checked` : `${this.name}-unchecked`
       }`,
     )
-
-    this.registerEvent('on-change', this.name)
+    if (disabled === false)
+      this.registerEvent('on-change', this.name)
 
     return `<button type="button" role="switch" aria-checked="${checked}" class="${switchClass}" ${attributes}>
       <div class="${this.name}-handle"></div>
-      ${checked ? 'nihao' : ''}
       <span class="${this.name}-inner">
         <span class="${this.name}-inner-checked"></span>
         <span class="${this.name}-inner-unchecked"></span>
