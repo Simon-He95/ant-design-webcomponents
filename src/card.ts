@@ -1,6 +1,6 @@
+import { BaseWebComponent } from '@simon_he/base-webcomponent'
 import { getAttributes } from '../utils'
-import { BaseWebComponent } from './base'
-// import { BaseWebComponent } from '@simon_he/base-webcomponent'
+// import { BaseWebComponent } from './base'
 
 export class AdwCard extends BaseWebComponent {
   name = 'adw-card'
@@ -129,8 +129,7 @@ export class AdwCard extends BaseWebComponent {
       `${this.name} ${className} ${cover ? `${this.name}-hover` : ''}`,
     )
     let head
-
-    if (cover) {
+    if (this.isTrueProp('cover')) {
       head = `<div class="${this.name}-cover">${cover}</div>`
     }
     else {

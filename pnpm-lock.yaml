@@ -6,7 +6,7 @@ importers:
     specifiers:
       '@ant-design/icons': ^5.0.1
       '@antfu/eslint-config': ^0.34.0
-      '@simon_he/base-webcomponent': ^0.0.14
+      '@simon_he/base-webcomponent': ^0.0.17
       '@types/node': ^18.0.0
       '@vitejs/plugin-vue': ^3.1.2
       '@vueuse/core': ^9.0.0
@@ -30,13 +30,14 @@ importers:
       vitepress: 1.0.0-alpha.61
       vitest: ^0.13.1
       vue: ^3.2.41
+      xx: ^0.0.3
     dependencies:
       '@vueuse/core': 9.7.0_vue@3.2.41
       vue: 3.2.41
     devDependencies:
       '@ant-design/icons': 5.0.1
       '@antfu/eslint-config': 0.34.0_wyqvi574yv7oiwfeinomdzmc3m
-      '@simon_he/base-webcomponent': 0.0.14
+      '@simon_he/base-webcomponent': 0.0.17
       '@types/node': 18.11.16
       '@vitejs/plugin-vue': 3.2.0_vite@4.2.1+vue@3.2.41
       '@webcomponents/webcomponentsjs': 2.7.0
@@ -58,6 +59,7 @@ importers:
       vite: 4.2.1_@types+node@18.11.16
       vitepress: 1.0.0-alpha.61_@types+node@18.11.16
       vitest: 0.13.1
+      xx: 0.0.3
 
   playground:
     specifiers:
@@ -1140,8 +1142,8 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /@simon_he/base-webcomponent/0.0.14:
-    resolution: {integrity: sha512-nFgLg9Lk4Wfyi7orgSZUxr0NgYgow0NPqMmVqdQdbUPQLk97i8tbApCGSigJl3hDy/XSJ2E/4D4HgfNOxnpsvg==}
+  /@simon_he/base-webcomponent/0.0.17:
+    resolution: {integrity: sha512-cVD+xxHvqNCCCKQ49ejbsxyiR/lBcTWbLq6+IS5cJG6o7SIMqliPjSdlFaYgQ/50do1LfsC8L7YGrBAWDn7lFg==}
     engines: {node: '>=14.6'}
     requiresBuild: true
     dependencies:
@@ -6706,6 +6708,10 @@ packages:
 
   /xmlchars/2.2.0:
     resolution: {integrity: sha512-JZnDKK8B0RCDw84FNdDAIpZK+JuJw+s7Lz8nksI7SIuU3UXJJslUthsi+uWBUYOwPFwW7W7PRLRfUKpxjtjFCw==}
+    dev: true
+
+  /xx/0.0.3:
+    resolution: {integrity: sha512-/mufj8FGvrKdstR/qtQW7TNJXnfm5+p9nVq52/d9kjejxip9rmYYa3hv8s2g8Wv5mf7Yw9+dImdZzOmrv35b9Q==}
     dev: true
 
   /yallist/4.0.0:

@@ -68,7 +68,7 @@
   "devDependencies": {
     "@ant-design/icons": "^5.0.1",
     "@antfu/eslint-config": "^0.34.0",
-    "@simon_he/base-webcomponent": "^0.0.14",
+    "@simon_he/base-webcomponent": "^0.0.17",
     "@types/node": "^18.0.0",
     "@vitejs/plugin-vue": "^3.1.2",
     "@webcomponents/webcomponentsjs": "^2.7.0",
@@ -89,7 +89,8 @@
     "unocss": "^0.29.2",
     "vite": "^4.2.1",
     "vitepress": "1.0.0-alpha.61",
-    "vitest": "^0.13.1"
+    "vitest": "^0.13.1",
+    "xx": "^0.0.3"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm exec lint-staged --concurrent false",

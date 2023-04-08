@@ -89,7 +89,7 @@ export class AdwSwitch extends BaseWebComponent {
   }
 
   template(): string {
-    const { className = '', checked = 'false', disabled = false } = this.props
+    const { className = '', checked = 'false' } = this.props
 
     const attributes = getAttributes(this.props)
 
@@ -98,7 +98,7 @@ export class AdwSwitch extends BaseWebComponent {
         checked === 'true' ? `${this.name}-checked` : `${this.name}-unchecked`
       }`,
     )
-    if (disabled === false)
+    if (!this.isTrueProp('disabled'))
       this.registerEvent('on-change', this.name)
 
     return `<button type="button" role="switch" aria-checked="${checked}" class="${switchClass}" ${attributes}>

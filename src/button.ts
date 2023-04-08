@@ -139,7 +139,8 @@ export class AdwButton extends BaseWebComponent {
     const btnClass = this.lintClass(
       `${this.name} ${this.name}-${type} ${className}`,
     )
-    this.registerEvent('click-handler', btnClass)
+    if (!this.isTrueProp('disabled'))
+      this.registerEvent('click-handler', btnClass)
 
     return `<button class="${btnClass}" ${attributes}><slot></slot></button>`
   }

@@ -1,4 +1,5 @@
 import { BaseWebComponent } from '@simon_he/base-webcomponent'
+// import { BaseWebComponent } from './base'
 import { getAttributes } from '../utils'
 
 export class AdwCheckbox extends BaseWebComponent {
@@ -68,10 +69,11 @@ export class AdwCheckbox extends BaseWebComponent {
   }
 
   template(): string {
-    const { className = '', disabled } = this.props
+    const { className = '' } = this.props
     const attributes = getAttributes(this.props)
     const checkboxClass = this.lintClass(`${this.name} ${className}`)
-    if (disabled === undefined || disabled === 'false')
+    console.log(this.props, this.isTrueProp('disabled'))
+    if (!this.isTrueProp('disabled'))
       this.registerEvent('click-handler', `${this.name}-wrapper`)
     return `
     <div class="${this.name}-wrapper">
