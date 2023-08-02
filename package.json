@@ -89,7 +89,7 @@
     "unocss": "^0.29.2",
     "vite": "^4.2.1",
     "vitepress": "1.0.0-alpha.61",
-    "vitest": "^0.13.1",
+    "vitest": "^0.34.0",
     "xx": "^0.0.3"
   },
   "simple-git-hooks": {
